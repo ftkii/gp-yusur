@@ -46,10 +46,9 @@ class Schedulecampaign extends StatelessWidget {
                       width: 299,
                       height: 64,
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 249, 246, 246),
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
-                        border: Border.all(
-                            color: const Color.fromARGB(255, 221, 213, 213)),
+                        border: Border.all(color: const Color(0xFFB7AD9F)),
                         boxShadow: [
                           BoxShadow(
                             color: const Color.fromARGB(255, 0, 0, 0)
@@ -142,8 +141,7 @@ class Schedulecampaign extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(30),
-                        border: Border.all(
-                            color: const Color.fromARGB(255, 221, 213, 213)),
+                        border: Border.all(color: const Color(0xFFB7AD9F)),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -177,8 +175,7 @@ class Schedulecampaign extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
-                        border: Border.all(
-                            color: const Color.fromARGB(255, 221, 213, 213)),
+                        border: Border.all(color: const Color(0xFFB7AD9F)),
                       ),
                       child: const Center(
                         child: Text(
@@ -198,8 +195,7 @@ class Schedulecampaign extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
-                        border: Border.all(
-                            color: const Color.fromARGB(255, 221, 213, 213)),
+                        border: Border.all(color: const Color(0xFFB7AD9F)),
                       ),
                       child: const Center(
                         child: Text(
@@ -219,8 +215,7 @@ class Schedulecampaign extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
-                        border: Border.all(
-                            color: const Color.fromARGB(255, 221, 213, 213)),
+                        border: Border.all(color: const Color(0xFFB7AD9F)),
                       ),
                       child: const Center(
                         child: Text(

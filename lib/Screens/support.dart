@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
                 width: 299,
                 height: 168,
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 221, 213, 213),
+                  color: const Color(0x9A918566).withOpacity(0.4),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Stack(
@@ -87,8 +87,7 @@ class HomePage extends StatelessWidget {
                       decoration: const InputDecoration(
                         label: Text("\t You email address"),
                         border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 221, 213, 213)),
+                          borderSide: BorderSide(color: Color(0x9A918566)),
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
                         filled: true,
@@ -102,8 +101,7 @@ class HomePage extends StatelessWidget {
                       decoration: const InputDecoration(
                         label: Text("\t The subject"),
                         border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 221, 213, 213)),
+                          borderSide: BorderSide(color: Color(0x9A918566)),
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
                         filled: true,
@@ -118,8 +116,7 @@ class HomePage extends StatelessWidget {
                       decoration: const InputDecoration(
                         label: Text("\t Problem Description"),
                         border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 221, 213, 213)),
+                          borderSide: BorderSide(color: Color(0x9A918566)),
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
                         filled: true,
@@ -133,7 +130,7 @@ class HomePage extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.all(20),
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 221, 213, 213),
+                          color: const Color(0x9A918566).withOpacity(0.4),
                           borderRadius: BorderRadius.circular(40),
                         ),
                         child: const Row(

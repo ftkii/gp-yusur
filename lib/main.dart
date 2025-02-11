@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:projct_gp/Screens/schedulecampaign.dart';
-import 'package:projct_gp/Screens/campaign_news.dart';
+//import 'package:projct_gp/Screens/campaign_news.dart';
+import 'package:projct_gp/Screens/support.dart';
 //import 'Screens/support.dart';
 
 void main() {
@@ -20,6 +21,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: campaign_news());
+        home: HomePage());
   }
 }

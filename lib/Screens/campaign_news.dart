@@ -170,6 +170,11 @@ class campaign_news extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                          color: const Color(0xFFB7AD9F),
+                          width: 2,
+                          style: BorderStyle.solid,
+                        ),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.5),
@@ -211,6 +216,11 @@ class campaign_news extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                          color: const Color(0xFFB7AD9F),
+                          width: 2,
+                          style: BorderStyle.solid,
+                        ),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.5),
@@ -252,6 +262,11 @@ class campaign_news extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                          color: const Color(0xFFB7AD9F),
+                          width: 2,
+                          style: BorderStyle.solid,
+                        ),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.5),
@@ -293,6 +308,11 @@ class campaign_news extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                          color: const Color(0xFFB7AD9F),
+                          width: 2,
+                          style: BorderStyle.solid,
+                        ),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.5),
