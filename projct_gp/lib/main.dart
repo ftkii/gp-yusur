@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'package:projct_gp/Screens/schedulecampaign.dart';
-//import 'package:projct_gp/Screens/campaign_news.dart';
+//import '/Screens/schedulecampaign.dart';
+//import '/Screens/campaign_news.dart';
 import 'Screens/support.dart';
 
 void main() {
