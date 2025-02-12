@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projct_gp/widget/arrow.dart';
+import '/widget/arrow.dart';
 
 class HomePage extends StatelessWidget {
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projct_gp/Screens/schedulecampaign.dart';
-import 'package:projct_gp/widget/arrow.dart';
+import '/Screens/schedulecampaign.dart';
+import '/widget/arrow.dart';
 
 class campaign_news extends StatelessWidget {
   @override

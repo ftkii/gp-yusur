@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projct_gp/Screens/campaign_news.dart';
+import '/Screens/campaign_news.dart';
 
 class ArrowIcon extends StatelessWidget {
   const ArrowIcon({super.key});
