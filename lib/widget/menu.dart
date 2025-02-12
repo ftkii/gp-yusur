@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Screens/support.dart';
+import '/Screens/support.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({super.key});
@@ -15,7 +15,7 @@ class Sidebar extends StatelessWidget {
             height: 50,
             width: 50,
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           ListTile(
@@ -27,11 +27,14 @@ class Sidebar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.headset_mic_outlined),
             title: Text("Support"),
-            onTap: () {Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomePage(),
-              ))},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => support(),
+                ),
+              );
+            },
           ),
         ],
       ),
