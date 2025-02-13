@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yusur_app/Screens/Home_page.dart';
+import 'package:yusur_app/Screens/Login_page.dart';
 import 'package:yusur_app/widget/nav_bar.dart';
 
 class Profile extends StatefulWidget {
@@ -77,7 +78,10 @@ class _ProfileState extends State<Profile> {
               height: 40,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginPage()));
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFFB7AD9F),
                 padding: EdgeInsets.symmetric(horizontal: 130, vertical: 15),

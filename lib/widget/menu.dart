@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yusur_app/Screens/faq_page.dart';
 import '/Screens/support.dart';
 
 class Sidebar extends StatelessWidget {
@@ -21,7 +22,14 @@ class Sidebar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.info_outline),
             title: Text("FAQ"),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FAQScreen(),
+                ),
+              );
+            },
           ),
           Divider(),
           ListTile(

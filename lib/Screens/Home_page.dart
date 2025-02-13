@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:yusur_app/Screens/fatwa_screen.dart';
+import 'package:yusur_app/Screens/manasik_screen.dart';
 import 'package:yusur_app/Screens/prayer_time.dart';
 import 'package:yusur_app/Screens/profile.dart';
+import 'package:yusur_app/Screens/qibla_direction_screen.dart';
 import 'package:yusur_app/widget/FeaturedServices.dart';
 import 'package:yusur_app/widget/card.dart';
 import 'package:yusur_app/widget/menu.dart';
@@ -43,15 +46,15 @@ class _HomePageState extends State<HomePage> {
           FeaturedService(
             items: [
               {'text': 'Quran', 'image': 'images/Vector.png'},
-              {'text': 'Qibla Direction', 'image': 'images/Qibla.png'},
+              {'text': 'Qibla Direction', 'image': 'images/Qibla.png', 'page': QiblaDirectionScreen()},
               {'text': 'Map', 'image': 'images/Map.png'},
               {
                 'text': 'Prayer Time',
                 'image': 'images/Prayer.png',
                 'page': PrayerTime()
               },
-              {'text': 'Fatwas', 'image': 'images/fatwas.png'},
-              {'text': 'Manasik', 'image': 'images/Manasik.png'},
+              {'text': 'Fatwas', 'image': 'images/fatwas.png', 'page': FatwaScreen()},
+              {'text': 'Manasik', 'image': 'images/Manasik.png', 'page': ManasikScreen()},
             ],
           ),
         ],
