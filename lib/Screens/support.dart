@@ -17,12 +17,6 @@ class support extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 16, top: 16),
-            child: ArrowIcon(),
-          ),
-        ],
       ),
       body: Container(
         //  الخلفية هنا
