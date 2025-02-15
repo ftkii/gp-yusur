@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 
-class FatwaTile extends StatefulWidget {
+class FAQTile extends StatefulWidget {
   final String title;
   final String? content;
 
-  const FatwaTile({super.key, required this.title, this.content});
+  const FAQTile({super.key, required this.title, this.content});
 
   @override
-  State<FatwaTile> createState() => _FatwaTileState();
+  State<FAQTile> createState() => _FatwaTileState();
 }
 
-class _FatwaTileState extends State<FatwaTile> {
+class _FatwaTileState extends State<FAQTile> {
   bool isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color.fromARGB(255, 243, 243, 243),
+      color: Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
         side: const BorderSide(
-          color: Color(0xFFB7AD9F),
-          width: 1,
+          color: Color(0x9A918580),
+          width: 2,
         ),
       ),
       elevation: 1,
@@ -33,9 +33,9 @@ class _FatwaTileState extends State<FatwaTile> {
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           leading: Image.asset(
-            'images/fatwas.png',
-            width: 30,
-            height: 30,
+            'images/faq.png',
+            width: 20,
+            height: 20,
             fit: BoxFit.contain,
           ),
           trailing: Icon(isExpanded ? Icons.expand_less : Icons.expand_more),

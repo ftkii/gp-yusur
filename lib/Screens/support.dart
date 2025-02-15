@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yusur_app/widget/arrow.dart';
 
 class support extends StatelessWidget {
   @override
@@ -7,15 +8,23 @@ class support extends StatelessWidget {
       //
       appBar: AppBar(
         backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
         centerTitle: true,
+        elevation: 0,
         title: const Text(
           "Support",
           style: TextStyle(
-            fontSize: 25,
-            color: Color.fromARGB(255, 4, 4, 4),
+            color: Colors.black,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 16, top: 16),
+            child: ArrowIcon(),
+          ),
+        ],
       ),
       body: Container(
         //  الخلفية هنا
@@ -36,7 +45,7 @@ class support extends StatelessWidget {
                 width: 299,
                 height: 168,
                 decoration: BoxDecoration(
-                  color: const Color(0x9A918566).withOpacity(0.4),
+                  color: const Color(0xFFB7AD9F),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Stack(
@@ -80,7 +89,8 @@ class support extends StatelessWidget {
                       decoration: const InputDecoration(
                         label: Text("\t You email address"),
                         border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0x9A918566)),
+                          borderSide: BorderSide(
+                              color: Color.fromARGB(255, 220, 213, 202)),
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
                         filled: true,
@@ -107,7 +117,7 @@ class support extends StatelessWidget {
                     TextFormField(
                       maxLines: 3,
                       decoration: const InputDecoration(
-                        label: Text("\t Problem Description"),
+                        label: Text("Problem Description"),
                         border: OutlineInputBorder(
                           borderSide: BorderSide(color: Color(0x9A918566)),
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -117,32 +127,27 @@ class support extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 30,
                     ),
-                    InkWell(
-                      child: Container(
-                        padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: const Color(0x9A918566).withOpacity(0.4),
-                          borderRadius: BorderRadius.circular(40),
-                        ),
-                        child: const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              "Send",
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 10, 10, 10),
-                                fontSize: 20,
-                              ),
-                            )
-                          ],
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFFB7AD9F),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 110, vertical: 15),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
                         ),
                       ),
-                    ),
+                      child: const Text(
+                        "Send",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:yusur_app/widget/arrow.dart';
 import '/widget/task_list_widget.dart';
+
 //الشاشه الرئيسيه الي تعرضها
 class ManasikScreen extends StatefulWidget {
   const ManasikScreen({super.key});
@@ -11,24 +13,39 @@ class ManasikScreen extends StatefulWidget {
 class _ManasikScreenState extends State<ManasikScreen> {
   final List<bool> completedTasks = List.generate(7, (_) => false);
 
-  int get completedCount => completedTasks.where((isCompleted) => isCompleted).length;
+  int get completedCount =>
+      completedTasks.where((isCompleted) => isCompleted).length;
   int get totalTasks => completedTasks.length;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        elevation: 0,
+        title: const Text(
+          "Manasik",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 16, top: 16),
+            child: ArrowIcon(),
+          ),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
-              child: Text(
-                'Manasik',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-            ),
             const SizedBox(height: 8),
             const Center(
               child: Text(
@@ -38,9 +55,13 @@ class _ManasikScreenState extends State<ManasikScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            TaskHeaderWidget(completedCount: completedCount, totalTasks: totalTasks),
+            TaskHeaderWidget(
+                completedCount: completedCount, totalTasks: totalTasks),
             const SizedBox(height: 20),
-            Expanded(child: TaskListWidget(completedTasks: completedTasks, onUpdate: () => setState(() {}))),
+            Expanded(
+                child: TaskListWidget(
+                    completedTasks: completedTasks,
+                    onUpdate: () => setState(() {}))),
           ],
         ),
       ),
@@ -76,12 +97,14 @@ class TaskHeaderWidget extends StatelessWidget {
                   value: progress,
                   strokeWidth: 6,
                   backgroundColor: Colors.grey[300],
-                  valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF8B7E6A)),
+                  valueColor:
+                      const AlwaysStoppedAnimation<Color>(Color(0xFFB7AD9F)),
                 ),
               ),
               Text(
                 '${(progress * 100).toInt()}%',
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -92,11 +115,9 @@ class TaskHeaderWidget extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
-              color: const Color(0xFFD6CFC9),
+              color: const Color(0xFFB7AD9F),
               borderRadius: BorderRadius.circular(12),
             ),
-            
-         
             child: const Text(
               "Task",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),

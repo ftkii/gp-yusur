@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 //يوضح المهمام وحالتها هل هي مكتمله ويقدر يضغط عليها
 class TaskTile extends StatelessWidget {
   final int stepNumber;
@@ -39,10 +40,12 @@ class TaskTile extends StatelessWidget {
                 const SizedBox(width: 12),
                 Expanded(
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 12),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border.all(color: const Color(0xFF8B7E6A), width: 1.5),
+                      border: Border.all(
+                          color: const Color(0xFFB7AD9F), width: 1.5),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Row(
@@ -50,16 +53,22 @@ class TaskTile extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: 14,
-                          backgroundColor: const Color(0xFF8B7E6A),
+                          backgroundColor: const Color(0xFFB7AD9F),
                           child: Text(
                             stepNumber.toString(),
-                            style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                            style: const TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
-                        Text(title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                        Text(title,
+                            style: const TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w500)),
                         Icon(
-                          isCompleted ? Icons.check_circle : Icons.circle_outlined,
-                          color: const Color(0xFF8B7E6A),
+                          isCompleted
+                              ? Icons.check_circle
+                              : Icons.circle_outlined,
+                          color: const Color(0xFFB7AD9F),
                         ),
                       ],
                     ),

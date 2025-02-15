@@ -22,7 +22,9 @@ class campaign_news extends StatelessWidget {
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 16, top: 16),
-            child: ArrowIcon(),
+            child: ArrowIcon(
+              
+            ),
           ),
         ],
       ),
