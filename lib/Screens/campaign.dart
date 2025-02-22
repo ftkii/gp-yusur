@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yusur_app/Screens/Home_page_two.dart';
 import 'package:yusur_app/Screens/campaign_schedule.dart';
 import 'package:yusur_app/widget/contain.dart';
 import 'campaign_news_page.dart';
@@ -11,13 +12,43 @@ class Campaign extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Center(
-            child: Text(
-          "Campaign Name",
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        elevation: 0,
+        title: const Text(
+          "Campaign",
           style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.w700, color: Colors.black),
-        )),
-        backgroundColor: const Color.fromARGB(51, 154, 145, 133),
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16, top: 16),
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xffffD9D9D9), width: 1),
+                color: Color.fromARGB(255, 241, 238, 238),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: IconButton(
+                icon: Icon(Icons.arrow_forward, color: Colors.black),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePageTwo(pilgrimID: ''),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
       ),
       body: SafeArea(
         child: Center(
@@ -25,62 +56,60 @@ class Campaign extends StatelessWidget {
             children: [
               Expanded(
                 child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          campaignSchedule()));
-                            },
-                            child: contain(
-                              imagePath: 'images/schedule.png',
-                              imageName: 'Campaign Schedule',
-                            ),
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => campaignSchedule(),
+                              ),
+                            );
+                          },
+                          child: contain(
+                            imagePath: 'images/schedule.png',
+                            imageName: 'Campaign Schedule',
                           ),
-                          SizedBox(
-                            width: 35,
+                        ),
+                        SizedBox(width: 35),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CampaignNews(),
+                              ),
+                            );
+                          },
+                          child: contain(
+                            imagePath: 'images/news.png',
+                            imageName: 'Campaign News',
                           ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => CampaignNews()));
-                            },
-                            child: contain(
-                              imagePath: 'images/news.png',
-                              imageName: 'Campaign News',
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 90,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          contain(
-                            imagePath: 'assets/AlarmBracelet.png',
-                            imageName: 'Recive Location',
-                          ),
-                          SizedBox(
-                            width: 35,
-                          ),
-                          contain(
-                            imagePath: 'images/news2.png',
-                            imageName: 'List Pilgrim',
-                          )
-                        ],
-                      ),
-                    ]),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 90),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        contain(
+                          imagePath: 'assets/AlarmBracelet.png',
+                          imageName: 'Recive Location',
+                        ),
+                        SizedBox(width: 35),
+                        contain(
+                          imagePath: 'images/news2.png',
+                          imageName: 'List Pilgrim',
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

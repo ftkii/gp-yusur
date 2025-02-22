@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:yusur_app/Screens/Home_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:yusur_app/widget/PilgrimProvider.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); //يتأكد انه تمت عمليه الانشلايز قبل مايسوي رن
+  await Firebase.initializeApp();
+  runApp(
+    ChangeNotifierProvider(create: (_) => PilgrimProvider(), child: MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home:  HomePage(),
+      home: HomePage(),
     );
   }
 }

@@ -39,48 +39,33 @@ class _ProfileState extends State<Profile> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            Image.asset(
-              "images/yusur_logo.png",
-              height: 90,
-              width: 90,
-            ),
-            SizedBox(
-              height: 15,
-            ),
+            SizedBox(height: 60),
+            Image.asset("images/yusur_logo.png", height: 90, width: 90),
+            SizedBox(height: 15),
             Text(
               "Easier and Safer Hajj at Your Fingertips!",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 23,
-                fontWeight: FontWeight.w500,
-              ),
+              style: TextStyle(fontSize: 23, fontWeight: FontWeight.w500),
             ),
-            SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: 30),
             Text(
               "Enjoy exclusive services such as instant emergency assistance and other features designed to make your journey more comfortable. Registration is only available for pilgrims enrolled in an accredited Hajj campaign, ensuring access to additional benefits that enhance your experience with ease and peace of mind.",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
             ),
-            SizedBox(
-              height: 40,
-            ),
+            SizedBox(height: 40),
             Text(
               "If you are registered in a campaign, join now and take advantage of our exclusive services!",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
-              height: 40,
-            ),
+            SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LoginPage()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFFB7AD9F),
@@ -97,7 +82,7 @@ class _ProfileState extends State<Profile> {
                   color: Colors.black,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
