@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yusur_app/Screens/insertPilgrim.dart';
 
 class ListOfPilgrimScreen extends StatelessWidget {
   const ListOfPilgrimScreen({super.key});
@@ -28,8 +29,10 @@ class ListOfPilgrimScreen extends StatelessWidget {
                 Container(
                   width: 350,
                   height: 30,
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 40,
+                    vertical: 40,
+                  ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
                     border: Border.all(color: const Color(0x9A918580)),
@@ -47,8 +50,8 @@ class ListOfPilgrimScreen extends StatelessWidget {
                       const Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(
-                              bottom:
-                                  4.0), // Adjust padding to align text with image
+                            bottom: 4.0,
+                          ), // Adjust padding to align text with image
                           child: TextField(
                             decoration: InputDecoration(
                               hintText: 'Search Pilgrim',
@@ -68,8 +71,10 @@ class ListOfPilgrimScreen extends StatelessWidget {
                 Container(
                   width: 350,
                   height: 66,
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
+                  ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
                     border: Border.all(
@@ -113,8 +118,10 @@ class ListOfPilgrimScreen extends StatelessWidget {
                 Container(
                   width: 350,
                   height: 66,
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15.0),
@@ -158,8 +165,10 @@ class ListOfPilgrimScreen extends StatelessWidget {
                 Container(
                   width: 350,
                   height: 66,
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
+                  ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
                     border: Border.all(
@@ -208,7 +217,12 @@ class ListOfPilgrimScreen extends StatelessWidget {
                       icon: Image.asset('images/pluscircle.png'),
                       iconSize: 20,
                       onPressed: () {
-                        //       عند الضغط على الزر
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Insertpilgrim(),
+                          ),
+                        );
                       },
                     ),
                   ),
