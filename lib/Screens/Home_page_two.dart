@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:yusur_app/Screens/Pilgrim_Information.dart';
+import 'package:yusur_app/Screens/ambulance_request_screen.dart';
 import 'package:yusur_app/Screens/campaign.dart';
 import 'package:yusur_app/Screens/fatwa_screen.dart';
 import 'package:yusur_app/Screens/manasik_screen.dart';
 import 'package:yusur_app/Screens/prayer_time.dart';
 import 'package:yusur_app/Screens/qibla_direction_screen.dart';
+import 'package:yusur_app/Screens/qibla_page.dart';
 import 'package:yusur_app/widget/FeaturedServices.dart';
 import 'package:yusur_app/widget/card.dart';
 import 'package:yusur_app/widget/menu.dart';
@@ -49,7 +51,7 @@ class _HomePageTwoState extends State<HomePageTwo> {
               {
                 'text': 'Qibla Direction',
                 'image': 'images/Qibla.png',
-                'page': QiblaDirectionScreen(),
+                'page': QiblaCompassScreen(),
               },
               {'text': 'Map', 'image': 'images/Map.png'},
               {
@@ -75,7 +77,7 @@ class _HomePageTwoState extends State<HomePageTwo> {
               {
                 'text': 'Ambulance',
                 'image': 'images/Ambulance.png',
-                'page': Campaign(),
+                'page': AmbulanceRequestScreen(),
               },
             ],
           ),

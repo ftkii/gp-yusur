@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yusur_app/Screens/ambulance_request_screen.dart';
 import 'create_incident_screen.dart';
 
 class CurrentIncidentScreen extends StatefulWidget {
@@ -13,7 +14,7 @@ class CurrentIncidentScreen extends StatefulWidget {
 class _CurrentIncidentScreenState extends State<CurrentIncidentScreen> {
   late bool hasIncident;
 
-  // متغيرات لتخزين بيانات الحادث 
+  // متغيرات لتخزين بيانات الحادث
   String incidentNumber = "";
   String location = "";
   String numberOfInjured = "";
@@ -28,31 +29,49 @@ class _CurrentIncidentScreenState extends State<CurrentIncidentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        elevation: 0,
+        title: const Text(
+          "Ambulance Request",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16, top: 16),
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xffffD9D9D9), width: 1),
+                color: Color.fromARGB(255, 241, 238, 238),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: IconButton(
+                icon: Icon(Icons.arrow_forward, color: Colors.black),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AmbulanceRequestScreen(),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
+      ),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
-            // العنوان والأيقونة
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              child: Row(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.arrow_back),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  const Spacer(),
-                  const Text(
-                    'Ambulance Request',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const Spacer(),
-                ],
-              ),
-            ),
-
             // أيقونة الإسعاف
             Center(
               child: Image.asset(
@@ -81,10 +100,7 @@ class _CurrentIncidentScreenState extends State<CurrentIncidentScreen> {
         alignment: Alignment.topCenter,
         child: Container(
           width: double.infinity,
-          constraints: const BoxConstraints(
-            maxWidth: 380,
-            maxHeight: 220,
-          ),
+          constraints: const BoxConstraints(maxWidth: 380, maxHeight: 220),
           padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
             color: const Color(0xFFD1CCC4),
@@ -103,16 +119,29 @@ class _CurrentIncidentScreenState extends State<CurrentIncidentScreen> {
             children: [
               const Text(
                 "Incident Details",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
               const SizedBox(height: 5),
               const Divider(color: Colors.black54),
               const SizedBox(height: 5),
 
               // البيانات ستكون فارغة حتى يتم تحديثها من خلال الفورم
-              _buildDetailRow("Incident Number:", incidentNumber.isNotEmpty ? incidentNumber : "N/A"),
-              _buildDetailRow("Location:", location.isNotEmpty ? location : "N/A"),
-              _buildDetailRow("Number of Injured:", numberOfInjured.isNotEmpty ? numberOfInjured : "N/A"),
+              _buildDetailRow(
+                "Incident Number:",
+                incidentNumber.isNotEmpty ? incidentNumber : "N/A",
+              ),
+              _buildDetailRow(
+                "Location:",
+                location.isNotEmpty ? location : "N/A",
+              ),
+              _buildDetailRow(
+                "Number of Injured:",
+                numberOfInjured.isNotEmpty ? numberOfInjured : "N/A",
+              ),
               _buildDetailRow("Status:", status.isNotEmpty ? status : "N/A"),
               const SizedBox(height: 10),
 
@@ -127,7 +156,9 @@ class _CurrentIncidentScreenState extends State<CurrentIncidentScreen> {
                       // انتقل إلى شاشة إنشاء حادث واحصل على القيم المدخلة بعد الرجوع
                       final result = await Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => CreateIncidentScreen()),
+                        MaterialPageRoute(
+                          builder: (context) => CreateIncidentScreen(),
+                        ),
                       );
 
                       if (result != null && result is Map<String, String>) {
@@ -169,7 +200,11 @@ class _CurrentIncidentScreenState extends State<CurrentIncidentScreen> {
           children: [
             TextSpan(
               text: "$label ",
-              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.black),
+              style: const TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
             ),
             TextSpan(
               text: value,
@@ -182,19 +217,25 @@ class _CurrentIncidentScreenState extends State<CurrentIncidentScreen> {
   }
 
   // زر الإجراءات (تحديث أو إلغاء)
-  Widget _buildActionButton(String text, Color bgColor, Color textColor, VoidCallback onPressed) {
+  Widget _buildActionButton(
+    String text,
+    Color bgColor,
+    Color textColor,
+    VoidCallback onPressed,
+  ) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: bgColor,
         foregroundColor: textColor,
         padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         elevation: 0,
       ),
       onPressed: onPressed,
-      child: Text(text, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
+      child: Text(
+        text,
+        style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+      ),
     );
   }
 

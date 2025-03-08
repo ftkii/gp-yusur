@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yusur_app/Screens/ambulance_request_screen.dart';
 import 'current_incident_screen.dart';
 
 class CreateIncidentScreen extends StatefulWidget {
@@ -15,32 +16,57 @@ class _CreateIncidentScreenState extends State<CreateIncidentScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        elevation: 0,
+        title: const Text(
+          "Ambulance Request",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16, top: 16),
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xffffD9D9D9), width: 1),
+                color: Color.fromARGB(255, 241, 238, 238),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: IconButton(
+                icon: Icon(Icons.arrow_forward, color: Colors.black),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AmbulanceRequestScreen(),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Column(
           children: [
             Expanded(
               child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 20,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    //  العنوان والسهم
-                    Row(
-                      children: [
-                        IconButton(
-                          icon: const Icon(Icons.arrow_back),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                        const Spacer(),
-                        const Text(
-                          'Ambulance Request',
-                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        const Spacer(),
-                      ],
-                    ),
                     const SizedBox(height: 20),
 
                     //  أيقونة سيارة الإسعاف
@@ -53,7 +79,6 @@ class _CreateIncidentScreenState extends State<CreateIncidentScreen> {
                     ),
                     const SizedBox(height: 30),
 
-                    
                     const Text(
                       "Please complete the following steps to create the incident",
                       style: TextStyle(fontSize: 16),
@@ -139,7 +164,9 @@ class _CreateIncidentScreenState extends State<CreateIncidentScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const CurrentIncidentScreen(hasIncident: true),
+                        builder:
+                            (context) =>
+                                const CurrentIncidentScreen(hasIncident: true),
                       ),
                     );
                   },
@@ -199,7 +226,7 @@ class _CreateIncidentScreenState extends State<CreateIncidentScreen> {
           Expanded(
             child: Text(
               text,
-              overflow: TextOverflow.ellipsis, 
+              overflow: TextOverflow.ellipsis,
               softWrap: false,
               maxLines: 1,
             ),
@@ -214,8 +241,7 @@ class _CreateIncidentScreenState extends State<CreateIncidentScreen> {
         ],
       ),
     );
-}
-
+  }
 
   Widget _buildNumberSelector() {
     return Container(
@@ -240,7 +266,10 @@ class _CreateIncidentScreenState extends State<CreateIncidentScreen> {
               ),
               Text(
                 injuredCount.toString(),
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               IconButton(
                 icon: const Icon(Icons.add),
@@ -281,7 +310,14 @@ class _CreateIncidentScreenState extends State<CreateIncidentScreen> {
           children: [
             Image.asset(iconPath, width: 35, height: 35),
             const SizedBox(height: 5),
-            Text(title, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Color(0xFF4A4A4A))),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF4A4A4A),
+              ),
+            ),
           ],
         ),
       ),

@@ -27,14 +27,8 @@ class CustomNavBar extends StatelessWidget {
           onTabSelected(index); // تغيير الصفحة بناءً على الاختيار
         },
         tabs: [
-          GButton(
-            icon: Icons.home,
-            text: "Home",
-          ),
-          GButton(
-            icon: Icons.person,
-            text: "Profile",
-          ),
+          GButton(icon: Icons.home, text: "Home"),
+          GButton(icon: Icons.person, text: "Profile"),
         ],
       ),
     );

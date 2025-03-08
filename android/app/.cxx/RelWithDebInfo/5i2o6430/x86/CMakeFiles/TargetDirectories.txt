@@ -1,0 +1,2 @@
+C:/Users/fatimah/Documents/GitHub/gp-yusur/android/app/.cxx/RelWithDebInfo/5i2o6430/x86/CMakeFiles/edit_cache.dir
+C:/Users/fatimah/Documents/GitHub/gp-yusur/android/app/.cxx/RelWithDebInfo/5i2o6430/x86/CMakeFiles/rebuild_cache.dir

@@ -24,7 +24,7 @@ class _Card_raState extends State<Card_ra> {
   void initState() {
     super.initState();
     // تغيير الأذكار كل 15 ثانية
-    Timer.periodic(Duration(seconds: 10), (timer) {
+    Timer.periodic(Duration(seconds: 15), (timer) {
       setState(() {
         currentIndex = (currentIndex + 1) % adhkar.length;
       });

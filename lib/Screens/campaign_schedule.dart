@@ -154,7 +154,7 @@ class _campaignScheduleState extends State<campaignSchedule> {
                       ),
                       child: Row(
                         children: [
-                          Image(image: AssetImage("assets/LeftArrow.png")),
+                          Image(image: AssetImage("images/LeftArrow.png")),
                           SizedBox(width: 20),
                           Text(
                             '${toOrdinal(HijriCalendar.fromDate(DateTime.now()).hDay)} of ${HijriCalendar.fromDate(DateTime.now()).longMonthName}',
